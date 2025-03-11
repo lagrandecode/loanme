@@ -23,7 +23,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     super.initState();
     _confettiController = ConfettiController(duration: const Duration(seconds: 3));
     // Start the animation after a short delay to ensure the screen is built
-    Future.delayed(const Duration(milliseconds: 500), () {
+    Future.delayed(const Duration(milliseconds: 10), () {
       _confettiController.play();
     });
   }
@@ -37,7 +37,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final loanData = ref.watch(loanDataProvider);
-    final currencyFormat = NumberFormat.currency(symbol: '\$');
+    final currencyFormat = NumberFormat.currency(symbol: '\N');
 
     return Scaffold(
       body: Stack(
@@ -320,10 +320,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               minBlastForce: 10,
               gravity: 0.3,
               colors: [
-                Colors.purple.shade200,
+                Colors.yellow.shade200,
                 Colors.purple.shade300,
                 Colors.purple.shade400,
-                Colors.purple.shade100,
+                Colors.red.shade200,
                 Colors.white,
               ],
             ),
